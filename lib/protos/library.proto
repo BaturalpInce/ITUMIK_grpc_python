@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+message Chair {
+  string chairId = 1;
+  bool isOccupied = 2;
+}
+
+message Desk {
+  string TOPIC = 1;
+  repeated Chair VALUES = 2;
+}
+
+message Library {
+  repeated Floor floors = 1;
+}
+
+message Floor {
+    string floorId = 1;
+    repeated Desk desks = 2;
+}
+
+message FloorDataRequest {
+	string floorId = 1;
+}
+
+message FloorDataResponse {
+	Floor floors = 1;
+}
+
+service FloorDataService {
+	rpc GetFloorData(FloorDataRequest) returns (FloorDataResponse) {}
+}
+
+message DeskDataRequest {
+    string query = 1;
+}
+
+message DeskDataResponse {
+    Desk desks = 1;
+}
+
+service DeskDataService {
+    rpc GetDeskData(DeskDataRequest) returns (DeskDataResponse) {}
+}
