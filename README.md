@@ -7,7 +7,7 @@ When a request arrive to the gRPC server, it will respond with the according dat
 
 # How to Run
 Clone the repo.
-Create .env file on root folder with this template and fill necessary values:
+Create .env file inside the project folder at the same level with gitignore with this template and fill necessary values:
 ```
 DB_USERNAME = your_username
 DB_PASSWORD = your_password
